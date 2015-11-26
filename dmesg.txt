@@ -1,0 +1,398 @@
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.18.11+ (dc4@dc4-XPS13-9333) (gcc version 4.8.3 20140303 (prerelease) (crosstool-NG linaro-1.13.1+bzr2650 - Linaro GCC 2014.03) ) #781 PREEMPT Tue Apr 21 18:02:18 BST 2015
+[    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+[    0.000000] Machine model: Raspberry Pi Model B
+[    0.000000] cma: Reserved 8 MiB at 0x17800000
+[    0.000000] Memory policy: Data cache writeback
+[    0.000000] On node 0 totalpages: 98304
+[    0.000000] free_area_init_node: node 0, pgdat c083d364, node_mem_map d74f4000
+[    0.000000]   Normal zone: 768 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 98304 pages, LIFO batch:31
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 97536
+[    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1280 bcm2708_fb.fbheight=1024 bcm2708.boardrev=0xe bcm2708.serial=0xe27c8ee7 smsc95xx.macaddr=B8:27:EB:7C:8E:E7 bcm2708_fb.fbswap=1 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 372252K/393216K available (5881K kernel code, 348K rwdata, 1868K rodata, 336K init, 733K bss, 20964K reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+[    0.000000]     vmalloc : 0xd8800000 - 0xff000000   ( 616 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xd8000000   ( 384 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc07997a0   (7750 kB)
+[    0.000000]       .init : 0xc079a000 - 0xc07ee000   ( 336 kB)
+[    0.000000]       .data : 0xc07ee000 - 0xc084513c   ( 349 kB)
+[    0.000000]        .bss : 0xc084513c - 0xc08fc8a8   ( 734 kB)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:522
+[    0.000025] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483648000ns
+[    0.000073] Switching to timer-based delay loop, resolution 1000ns
+[    0.000352] Console: colour dummy device 80x30
+[    0.001413] console [tty1] enabled
+[    0.001459] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+[    0.001533] pid_max: default: 32768 minimum: 301
+[    0.001912] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.001977] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.002981] Initializing cgroup subsys memory
+[    0.003072] Initializing cgroup subsys devices
+[    0.003133] Initializing cgroup subsys freezer
+[    0.003188] Initializing cgroup subsys net_cls
+[    0.003238] Initializing cgroup subsys blkio
+[    0.003354] CPU: Testing write buffer coherency: ok
+[    0.003465] ftrace: allocating 19232 entries in 57 pages
+[    0.108288] Setting up static identity map for 0x553398 - 0x5533d0
+[    0.111127] devtmpfs: initialized
+[    0.128598] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+[    0.131620] pinctrl core: initialized pinctrl subsystem
+[    0.134220] NET: Registered protocol family 16
+[    0.139694] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+[    0.141133] bcm2708.uart_clock = 3000000
+[    0.144050] No ATAGs?
+[    0.144116] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+[    0.144177] hw-breakpoint: maximum watchpoint size is 4 bytes.
+[    0.144242] mailbox: Broadcom VideoCore Mailbox driver
+[    0.144405] bcm2708_vcio: mailbox at f200b880
+[    0.144864] bcm_power: Broadcom power driver
+[    0.144922] bcm_power_open() -> 0
+[    0.144953] bcm_power_request(0, 8)
+[    0.645680] bcm_mailbox_read -> 00000080, 0
+[    0.645728] bcm_power_request -> 0
+[    0.645926] Serial: AMBA PL011 UART driver
+[    0.646161] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+[    1.027757] console [ttyAMA0] enabled
+[    1.091008] SCSI subsystem initialized
+[    1.095140] usbcore: registered new interface driver usbfs
+[    1.100926] usbcore: registered new interface driver hub
+[    1.106430] usbcore: registered new device driver usb
+[    1.113578] Switched to clocksource stc
+[    1.145777] FS-Cache: Loaded
+[    1.149092] CacheFiles: Loaded
+[    1.168334] NET: Registered protocol family 2
+[    1.174289] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    1.181469] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+[    1.188250] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.194770] TCP: reno registered
+[    1.198039] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    1.203967] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    1.210628] NET: Registered protocol family 1
+[    1.215708] RPC: Registered named UNIX socket transport module.
+[    1.221676] RPC: Registered udp transport module.
+[    1.226512] RPC: Registered tcp transport module.
+[    1.231242] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.238848] hw perfevents: enabled with armv6_1176 PMU driver, 3 counters available
+[    1.246985] bcm2708_dma: DMA manager at f2007000
+[    1.251828] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+[    1.261566] futex hash table entries: 256 (order: -1, 3072 bytes)
+[    1.268058] audit: initializing netlink subsys (disabled)
+[    1.273644] audit: type=2000 audit(1.030:1): initialized
+[    1.294365] VFS: Disk quotas dquot_6.5.2
+[    1.298700] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.308142] FS-Cache: Netfs 'nfs' registered for caching
+[    1.315327] NFS: Registering the id_resolver key type
+[    1.320497] Key type id_resolver registered
+[    1.324842] Key type id_legacy registered
+[    1.330227] msgmni has been set to 743
+[    1.336637] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.344650] io scheduler noop registered
+[    1.348633] io scheduler deadline registered (default)
+[    1.354377] io scheduler cfq registered
+[    1.360741] BCM2708FB: allocated DMA memory 57c00000
+[    1.366046] BCM2708FB: allocated DMA channel 0 @ f2007000
+[    1.389375] Console: switching to colour frame buffer device 160x64
+[    1.409721] bcm2708-dmaengine bcm2708-dmaengine: Load BCM2835 DMA engine driver
+[    1.417739] uart-pl011 dev:f1: no DMA platform data
+[    1.423529] vc-cma: Videocore CMA driver
+[    1.427727] vc-cma: vc_cma_base      = 0x00000000
+[    1.432549] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+[    1.438170] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+[    1.457106] brd: module loaded
+[    1.467377] loop: module loaded
+[    1.471142] vchiq: vchiq_init_state: slot_zero = 0xd7800000, is_master = 0
+[    1.479202] Loading iSCSI transport class v2.0-870.
+[    1.485905] usbcore: registered new interface driver smsc95xx
+[    1.492127] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    1.698434] Core Release: 2.80a
+[    1.701697] Setting default values for core params
+[    1.706737] Finished setting default values for core params
+[    1.912597] Using Buffer DMA mode
+[    1.916059] Periodic Transfer Interrupt Enhancement - disabled
+[    1.922023] Multiprocessor Interrupt Enhancement - disabled
+[    1.927758] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.932221] Dedicated Tx FIFOs mode
+[    1.936289] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xd7c14000 dma = 0x57c14000 len=9024
+[    1.946412] FIQ FSM acceleration enabled for :
+[    1.946412] Non-periodic Split Transactions
+[    1.946412] Periodic Split Transactions
+[    1.946412] High-Speed Isochronous Endpoints
+[    1.963475] dwc_otg: Microframe scheduler enabled
+[    1.963579] WARN::hcd_init_fiq:412: FIQ on core 0 at 0xc03fad3c
+[    1.969639] WARN::hcd_init_fiq:413: FIQ ASM at 0xc03fb014 length 36
+[    1.976050] WARN::hcd_init_fiq:438: MPHI regs_base at 0xd8806000
+[    1.982354] dwc_otg bcm2708_usb: DWC OTG Controller
+[    1.992431] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+[    2.004809] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+[    2.015378] Init: Port Power? op_state=1
+[    2.024323] Init: Power Port (0)
+[    2.032899] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    2.044867] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.057228] usb usb1: Product: DWC OTG Controller
+[    2.067012] usb usb1: Manufacturer: Linux 3.18.11+ dwc_otg_hcd
+[    2.077910] usb usb1: SerialNumber: bcm2708_usb
+[    2.088543] hub 1-0:1.0: USB hub found
+[    2.097584] hub 1-0:1.0: 1 port detected
+[    2.107198] dwc_otg: FIQ enabled
+[    2.107224] dwc_otg: NAK holdoff enabled
+[    2.107237] dwc_otg: FIQ split-transaction FSM enabled
+[    2.107312] Module dwc_common_port init
+[    2.107924] usbcore: registered new interface driver usb-storage
+[    2.119565] mousedev: PS/2 mouse device common for all mice
+[    2.131121] bcm2835-cpufreq: min=700000 max=700000
+[    2.141467] sdhci: Secure Digital Host Controller Interface driver
+[    2.152745] sdhci: Copyright(c) Pierre Ossman
+[    2.162343] DMA channels allocated for the MMC driver
+[    2.203853] Load BCM2835 MMC driver
+[    2.217571] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.236557] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.247972] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.262011] usbcore: registered new interface driver usbhid
+[    2.273760] usbhid: USB HID core driver
+[    2.285136] TCP: cubic registered
+[    2.294572] Initializing XFRM netlink socket
+[    2.306150] Indeed it is in host mode hprt0 = 00021501
+[    2.316472] NET: Registered protocol family 17
+[    2.333871] Key type dns_resolver registered
+[    2.350941] registered taskstats version 1
+[    2.360188] mmc0: host does not support reading read-only switch, assuming write-enable
+[    2.383985] vc-sm: Videocore shared memory driver
+[    2.396109] mmc0: new high speed SDHC card at address 59b4
+[    2.423631] [vc_sm_connected_init]: start
+[    2.433458] mmcblk0: mmc0:59b4 USDU1 14.7 GiB 
+[    2.454140] [vc_sm_connected_init]: end - returning 0
+[    2.466318]  mmcblk0: p1 p2
+[    2.518291] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    2.532112] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+[    2.546037] devtmpfs: mounted
+[    2.555477] Freeing unused kernel memory: 336K (c079a000 - c07ee000)
+[    2.603765] usb 1-1: new high-speed USB device number 2 using dwc_otg
+[    2.616197] Indeed it is in host mode hprt0 = 00001101
+[    2.824170] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+[    2.837579] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.855376] hub 1-1:1.0: USB hub found
+[    2.865905] hub 1-1:1.0: 3 ports detected
+[    3.153875] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+[    3.264408] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+[    3.289971] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.310110] smsc95xx v1.0.4
+[    3.401478] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:7c:8e:e7
+[    3.514048] usb 1-1.3: new low-speed USB device number 4 using dwc_otg
+[    3.669324] usb 1-1.3: New USB device found, idVendor=046d, idProduct=c315
+[    3.686215] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.703838] usb 1-1.3: Product: Logitech USB Keyboard
+[    3.718855] usb 1-1.3: Manufacturer: Logitech
+[    3.749982] input: Logitech Logitech USB Keyboard as /devices/platform/bcm2708_usb/usb1/1-1/1-1.3/1-1.3:1.0/0003:046D:C315.0001/input/input0
+[    3.771454] hid-generic 0003:046D:C315.0001: input,hidraw0: USB HID v1.10 Keyboard [Logitech Logitech USB Keyboard] on usb-bcm2708_usb-1.3/input0
+[    4.571882] udevd[159]: starting version 175
+[    8.180493] random: nonblocking pool is initialized
+[   10.931048] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   11.480605] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   21.858806] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+[   23.376190] smsc95xx 1-1.1:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+[   31.235701] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:2134012k SSFS
+[ 2153.492354] usb 1-1.2: new full-speed USB device number 5 using dwc_otg
+[ 2153.618635] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 2153.618676] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2153.618697] usb 1-1.2: Product: ARDUINO NANO
+[ 2153.618715] usb 1-1.2: Manufacturer: Gravitech
+[ 2153.618733] usb 1-1.2: SerialNumber: 14P04179
+[ 2153.688266] usbcore: registered new interface driver usbserial
+[ 2153.690399] usbcore: registered new interface driver usbserial_generic
+[ 2153.690653] usbserial: USB Serial support registered for generic
+[ 2153.707938] usbcore: registered new interface driver ftdi_sio
+[ 2153.710062] usbserial: USB Serial support registered for FTDI USB Serial Device
+[ 2153.710830] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 2153.711648] usb 1-1.2: Detected FT232RL
+[ 2153.714998] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 2160.680993] usb 1-1.2: USB disconnect, device number 5
+[ 2160.686007] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 2160.686173] ftdi_sio 1-1.2:1.0: device disconnected
+[ 2160.922636] usb 1-1.2: new full-speed USB device number 6 using dwc_otg
+[ 2161.048647] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 2161.048690] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2161.048711] usb 1-1.2: Product: ARDUINO NANO
+[ 2161.048984] usb 1-1.2: Manufacturer: Gravitech
+[ 2161.049017] usb 1-1.2: SerialNumber: 14P04179
+[ 2161.060373] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 2161.060627] usb 1-1.2: Detected FT232RL
+[ 2161.061922] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 2165.289711] usb 1-1.2: USB disconnect, device number 6
+[ 2165.295323] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 2165.295509] ftdi_sio 1-1.2:1.0: device disconnected
+[ 2165.532754] usb 1-1.2: new full-speed USB device number 7 using dwc_otg
+[ 2165.658883] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 2165.658926] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2165.658947] usb 1-1.2: Product: ARDUINO NANO
+[ 2165.658965] usb 1-1.2: Manufacturer: Gravitech
+[ 2165.658983] usb 1-1.2: SerialNumber: 14P04179
+[ 2165.670612] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 2165.670867] usb 1-1.2: Detected FT232RL
+[ 2165.672261] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 2165.801782] usb 1-1.2: USB disconnect, device number 7
+[ 2165.802470] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 2165.802727] ftdi_sio 1-1.2:1.0: device disconnected
+[ 2166.042847] usb 1-1.2: new full-speed USB device number 8 using dwc_otg
+[ 2166.168823] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 2166.168864] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2166.168885] usb 1-1.2: Product: ARDUINO NANO
+[ 2166.168902] usb 1-1.2: Manufacturer: Gravitech
+[ 2166.168920] usb 1-1.2: SerialNumber: 14P04179
+[ 2166.181274] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 2166.181522] usb 1-1.2: Detected FT232RL
+[ 2166.184771] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 2167.850041] usb 1-1.2: USB disconnect, device number 8
+[ 2167.853867] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 2167.854046] ftdi_sio 1-1.2:1.0: device disconnected
+[ 2168.092886] usb 1-1.2: new full-speed USB device number 9 using dwc_otg
+[ 2168.218866] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 2168.218906] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2168.218927] usb 1-1.2: Product: ARDUINO NANO
+[ 2168.218944] usb 1-1.2: Manufacturer: Gravitech
+[ 2168.218963] usb 1-1.2: SerialNumber: 14P04179
+[ 2168.230594] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 2168.230855] usb 1-1.2: Detected FT232RL
+[ 2168.232162] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3505.119705] usb 1-1.2: USB disconnect, device number 9
+[ 3505.125459] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3505.125651] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3526.352747] usb 1-1.2: new full-speed USB device number 10 using dwc_otg
+[ 3526.478769] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3526.478810] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3526.478831] usb 1-1.2: Product: ARDUINO NANO
+[ 3526.478848] usb 1-1.2: Manufacturer: Gravitech
+[ 3526.478865] usb 1-1.2: SerialNumber: 14P04179
+[ 3526.491353] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3526.491605] usb 1-1.2: Detected FT232RL
+[ 3526.494614] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3550.726787] ftdi_sio ttyUSB0: usb_serial_generic_read_bulk_callback - urb stopped: -32
+[ 3550.726882] ftdi_sio ttyUSB0: usb_serial_generic_read_bulk_callback - urb stopped: -32
+[ 3550.949963] usb 1-1.2: USB disconnect, device number 10
+[ 3550.950358] ftdi_sio ttyUSB0: error from flowcontrol urb
+[ 3550.955222] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3550.955326] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3551.193693] usb 1-1.2: new full-speed USB device number 11 using dwc_otg
+[ 3551.693542] usb 1-1.2: device not accepting address 11, error -32
+[ 3551.773698] usb 1-1.2: new full-speed USB device number 12 using dwc_otg
+[ 3551.899732] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3551.899775] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3551.899796] usb 1-1.2: Product: ARDUINO NANO
+[ 3551.899813] usb 1-1.2: Manufacturer: Gravitech
+[ 3551.899831] usb 1-1.2: SerialNumber: 14P04179
+[ 3551.920478] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3551.920739] usb 1-1.2: Detected FT232RL
+[ 3551.922010] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3553.254247] usb 1-1.2: USB disconnect, device number 12
+[ 3553.254929] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3553.255052] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3553.493726] usb 1-1.2: new full-speed USB device number 13 using dwc_otg
+[ 3553.619958] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3553.619998] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3553.620019] usb 1-1.2: Product: ARDUINO NANO
+[ 3553.620037] usb 1-1.2: Manufacturer: Gravitech
+[ 3553.620056] usb 1-1.2: SerialNumber: 14P04179
+[ 3553.631429] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3553.631677] usb 1-1.2: Detected FT232RL
+[ 3553.633006] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3556.582645] usb 1-1.2: USB disconnect, device number 13
+[ 3556.587374] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3556.587537] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3556.823906] usb 1-1.2: new full-speed USB device number 14 using dwc_otg
+[ 3556.949896] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3556.949939] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3556.949960] usb 1-1.2: Product: ARDUINO NANO
+[ 3556.949980] usb 1-1.2: Manufacturer: Gravitech
+[ 3556.949998] usb 1-1.2: SerialNumber: 14P04179
+[ 3556.961764] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3556.962013] usb 1-1.2: Detected FT232RL
+[ 3556.963321] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3594.987913] usb 1-1.2: USB disconnect, device number 14
+[ 3594.992179] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3594.992364] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3620.566230] usb 1-1.2: new full-speed USB device number 15 using dwc_otg
+[ 3620.692319] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3620.692360] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3620.692381] usb 1-1.2: Product: ARDUINO NANO
+[ 3620.692399] usb 1-1.2: Manufacturer: Gravitech
+[ 3620.692417] usb 1-1.2: SerialNumber: 14P04179
+[ 3620.713062] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3620.713312] usb 1-1.2: Detected FT232RL
+[ 3620.714627] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3646.624301] ftdi_sio ttyUSB0: usb_serial_generic_read_bulk_callback - urb stopped: -32
+[ 3646.624402] ftdi_sio ttyUSB0: usb_serial_generic_read_bulk_callback - urb stopped: -32
+[ 3646.707057] usb 1-1.2: USB disconnect, device number 15
+[ 3646.718277] ftdi_sio ttyUSB0: error from flowcontrol urb
+[ 3646.722462] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3646.722684] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3646.957347] usb 1-1.2: new full-speed USB device number 16 using dwc_otg
+[ 3647.083292] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3647.083332] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3647.083354] usb 1-1.2: Product: ARDUINO NANO
+[ 3647.083372] usb 1-1.2: Manufacturer: Gravitech
+[ 3647.083390] usb 1-1.2: SerialNumber: 14P04179
+[ 3647.095469] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3647.095724] usb 1-1.2: Detected FT232RL
+[ 3647.098953] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3656.180148] usb 1-1.2: USB disconnect, device number 16
+[ 3656.184445] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3656.184632] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3656.417584] usb 1-1.2: new full-speed USB device number 17 using dwc_otg
+[ 3656.543565] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3656.543606] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3656.543627] usb 1-1.2: Product: ARDUINO NANO
+[ 3656.543645] usb 1-1.2: Manufacturer: Gravitech
+[ 3656.543663] usb 1-1.2: SerialNumber: 14P04179
+[ 3656.555423] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3656.555737] usb 1-1.2: Detected FT232RL
+[ 3656.557110] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3659.764652] usb 1-1.2: USB disconnect, device number 17
+[ 3659.765329] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3659.765448] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3660.007687] usb 1-1.2: new full-speed USB device number 18 using dwc_otg
+[ 3660.133682] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3660.133723] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3660.133744] usb 1-1.2: Product: ARDUINO NANO
+[ 3660.133761] usb 1-1.2: Manufacturer: Gravitech
+[ 3660.133779] usb 1-1.2: SerialNumber: 14P04179
+[ 3660.145531] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3660.145778] usb 1-1.2: Detected FT232RL
+[ 3660.147151] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3690.744923] usb 1-1.2: USB disconnect, device number 18
+[ 3690.750498] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3690.750663] ftdi_sio 1-1.2:1.0: device disconnected
+[ 3773.421868] usb 1-1.2: new full-speed USB device number 19 using dwc_otg
+[ 3773.547963] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 3773.548005] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 3773.548026] usb 1-1.2: Product: ARDUINO NANO
+[ 3773.548044] usb 1-1.2: Manufacturer: Gravitech
+[ 3773.548062] usb 1-1.2: SerialNumber: 14P04179
+[ 3773.568822] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 3773.569069] usb 1-1.2: Detected FT232RL
+[ 3773.570383] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
+[ 3998.754779] usb 1-1.2: USB disconnect, device number 19
+[ 3998.759068] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+[ 3998.759254] ftdi_sio 1-1.2:1.0: device disconnected
+[ 4141.085541] usb 1-1.2: new full-speed USB device number 20 using dwc_otg
+[ 4141.211541] usb 1-1.2: New USB device found, idVendor=0403, idProduct=6001
+[ 4141.211581] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 4141.211602] usb 1-1.2: Product: ARDUINO NANO
+[ 4141.211620] usb 1-1.2: Manufacturer: Gravitech
+[ 4141.211636] usb 1-1.2: SerialNumber: 14P04179
+[ 4141.232278] ftdi_sio 1-1.2:1.0: FTDI USB Serial Device converter detected
+[ 4141.232541] usb 1-1.2: Detected FT232RL
+[ 4141.233834] usb 1-1.2: FTDI USB Serial Device converter now attached to ttyUSB0
