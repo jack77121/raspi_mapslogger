@@ -1,10 +1,11 @@
 #!/bin/bash
-DIRECTORY='log'
+# you should change this to your own directory
+DIRECTORY='/home/pi/Project/Gab/maps/log'
 if [ -d "$DIRECTORY" ]; then
 	# Control will enter here if $DIRECTORY exists.
 	echo "exist"
 	echo `pwd`
-	cd log
+	cd ${DIRECTORY}
 	for f in *.log; do
 		echo $f
 		filename=$(echo $f|cut -d '_' -f 1)
