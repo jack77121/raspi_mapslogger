@@ -1,4 +1,5 @@
 log/*
 dmesg.txt
+mqtt_server.txt
 !.gitignore
 
