@@ -1,3 +1,4 @@
 log/*
+dmesg.txt
 !.gitignore
 
