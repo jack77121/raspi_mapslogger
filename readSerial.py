@@ -6,7 +6,10 @@ import re
 import paho.mqtt.publish as publish
 import os
 
-ERROR=-999
+ERROR = -999
+# you should change this to your own server name file
+# in mqtt_server.txt, there is only one line which should be your mqtt server's domain name or ip
+SERVER_NAME_PATH = "mqtt_server.txt"
 
 def find_port():  
 	port_num = ERROR 
@@ -97,7 +100,10 @@ def logger_mqtt(port_num):
 						"|time=" + maps_data[4].zfill(2) + ":" + maps_data[5].zfill(2) + ":" + maps_data[6].zfill(2) + "|device=ArduinoNano|s_0=1.00|s_1=-1.00|s_2=1.00|s_3=0.00|s_d0=" + pm25 + "|s_t0=" + \
 						ambient_temperature + "|s_h0=" + ambient_humidity + "|g_0=" + CO2_ppm + "|b_0=" + ambient_pressure + "|gps_lat=-1.00|gps_lon=-1.00|gps_fix=0|gps_num=0|gps_alt=-1"
 			print mqtt_msg
-			publish.single("LASS/Test/MAPS", mqtt_msg, hostname="lass.iis.sinica.edu.tw")
+			f = open(SERVER_NAME_PATH, 'r')
+			server_name = f.readline()
+			# print server_name
+			publish.single("LASS/Test/MAPS", mqtt_msg, hostname=server_name.strip())
 		else:
 			print line
 			print "wrong format"
