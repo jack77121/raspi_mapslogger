@@ -5,6 +5,7 @@ import serial
 import re
 import paho.mqtt.publish as publish
 import os
+from datetime import datetime
 
 ERROR = -999
 TIME_HEADER_NUM = 0
@@ -51,7 +52,7 @@ def find_port():
 	with open("dmesg.txt") as f:
 		for line in f:
 			# print line
-			m = re.search('(usb 1-1.[0-9]): Product: ARDUINO NANO',line)
+			m = re.search('(usb 1-1.[0-9]): Product: (ARDUINO NANO|FT232R USB UART)',line)
 			if m:
 				for line in f:
 					# print m.group(1)
@@ -69,6 +70,7 @@ def find_port():
 					break
 				else:
 					continue
+
 	return port_num				
 
 
@@ -105,17 +107,19 @@ def logger_mqtt(port_num):
 			hour = maps_data[TIME_HOUR].zfill(2)
 			minute = maps_data[TIME_MINUTE].zfill(2)
 			second = maps_data[TIME_SECOND].zfill(2)
-			if time_check == False:
-				cmd_date = "sudo date +%Y%m%d -s "
-				ymd = year+month+date
-				cmd_time = "sudo date +%T -s "
-				hms = hour+":"+minute+":"+second
-				os.system(cmd_date+ymd)
-				os.system(cmd_time+hms)
-				time_check = True
-				print "time reset, done"
+			cmd_date = "sudo date +%Y%m%d -s "
+			ymd = year+month+date
+			cmd_time = "sudo date +%T -s "
+			hms = hour+":"+minute+":"+second
+			os.system(cmd_date+ymd)
+			os.system(cmd_time+hms)
+			time_check = True
+			print "time reset, done"
 			myTimestamp = year+month+date+'_' \
 						+hour+minute+second
+
+			utc_date = datetime.utcnow().strftime("%Y-%m-%d")
+			utc_time = datetime.utcnow().strftime("%H:%M:%S")
 			CO2_ratio = maps_data[CO2_RATIO]
 			CO2_temperature = maps_data[CO2_TEMPERATURE]
 			CO2_ppm = maps_data[CO2_PPM]
@@ -149,11 +153,24 @@ def logger_mqtt(port_num):
 			mqtt_msg = "|ver_format=3|fmt_opt=1|app=MAPS|ver_app=1.0|device_id=MAPS_4_001|tick=" + tick + "|date=" + maps_data[1].zfill(4) + "-" + maps_data[2].zfill(2) + "-" + maps_data[3].zfill(2) + \
 						"|time=" + maps_data[4].zfill(2) + ":" + maps_data[5].zfill(2) + ":" + maps_data[6].zfill(2) + "|device=ArduinoNano|s_0=" + package_num + "|s_1=-1.00|s_2=1.00|s_3=0.00|s_d0=" + pm25 + \
 						"|s_d1=" + pm10 + "|s_t0=" + ambient_temperature + "|s_h0=" + ambient_humidity + "|s_g0=" + CO2_ppm + "|s_b1=" + ambient_pressure + "|gps_lat=-1.00|gps_lon=-1.00|gps_fix=0|gps_num=0|gps_alt=-1"
+			mqtt_utc_time_msg = "|ver_format=3|fmt_opt=1|app=MAPS|ver_app=1.0|device_id=MAPS_4_001|tick=" + tick + "|date=" + utc_date + \
+						"|time=" + utc_time + "|device=ArduinoNano|s_0=" + package_num + "|s_1=-1.00|s_2=1.00|s_3=0.00|s_d0=" + pm25 + \
+						"|s_d1=" + pm10 + "|s_t0=" + ambient_temperature + "|s_h0=" + ambient_humidity + "|s_g0=" + CO2_ppm + "|s_b1=" + ambient_pressure + "|gps_lat=-1.00|gps_lon=-1.00|gps_fix=0|gps_num=0|gps_alt=-1"
 			print mqtt_msg
+			print mqtt_utc_time_msg
 			with open(SERVER_NAME_PATH, 'r') as f:
+				# publish for our server list
 				for server_name in f:
 					# print server_name
-					publish.single("LASS/Test/MAPS", mqtt_msg, hostname=server_name.strip())
+					try:
+						publish.single("RCEC/HOUSE/MAPS", mqtt_msg, hostname=server_name.strip())
+					except:
+						print "connection might be timeout"
+			# publish to lass server, use UTC time
+			try:
+				publish.single("LASS/Test/MAPS", mqtt_utc_time_msg, hostname="gpssensor.ddns.net")
+			except:
+				print "connection might be timeout"
 		else:
 			print "wrong format with input...................."
 			
